@@ -1,16 +1,6 @@
 package lab3.task4;
 
 public class LowMultithreading {
-    public static void main(final String[] args) {
-
-        final FirstLowMultithreading lm1  = new FirstLowMultithreading();
-        final SecondLowMultithreading lm2 = new SecondLowMultithreading();
-        final ThirdLowMultithreading lm3 = new ThirdLowMultithreading();
-
-        lm1.start();
-        lm2.start();
-        lm3.start();
-    }
     public static class FirstLowMultithreading extends Thread {
         @Override
         public void run() {
@@ -30,6 +20,17 @@ public class LowMultithreading {
         public void run() {
             Operations.mult(5, 4);
         }
+    }
+
+    public static void main(final String[] args) {
+
+        final FirstLowMultithreading lm1  = new FirstLowMultithreading();
+        final SecondLowMultithreading lm2 = new SecondLowMultithreading();
+        final ThirdLowMultithreading lm3 = new ThirdLowMultithreading();
+
+        lm1.start();
+        lm2.start();
+        lm3.start();
     }
 }
 
