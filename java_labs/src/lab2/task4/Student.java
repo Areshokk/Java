@@ -1,4 +1,4 @@
-package Lab2.task4;
+package lab2.task4;
 
 public class Student {
         private String id;// long

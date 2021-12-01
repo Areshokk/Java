@@ -19,3 +19,4 @@ public class HighMultithreading {
 
     }
 }
+/*submit поверта обєкт інтерфейса Future*/

@@ -1,4 +1,6 @@
-package Lab2.task4;
+package lab2.task4;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +32,7 @@ public class List {
     }
 
     public void infoAboutStudents() {
-        for(final Student student: studentList) {
+        for(final lab2.task4.Student student: studentList) {
             System.out.print("id " + student.getId() + " Name - "+ student.getName()+"  Course - " +student.getCourse()+ ", isMale - " +student.isMale()+ ", Age - " +student.getAge() + "  ");
 
             subjectList.stream().map((subject) -> (subject) + " - " + getMark(subject, student.getId()) + "  ").forEach(System.out::print);

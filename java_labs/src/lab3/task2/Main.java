@@ -5,7 +5,7 @@ public class Main {
         try (final MyLaptop myLaptop = new MyLaptop()) {
             myLaptop.read();
 
-        } catch (final Exception e) {
+        } catch (final Exception e) {   //IOExeption
             System.out.println("IOException");
         }
     }

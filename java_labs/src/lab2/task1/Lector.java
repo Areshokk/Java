@@ -1,4 +1,4 @@
-package Lab2.task1;
+package lab2.task1;
 
 public class Lector extends Human {
     private String TypeOfDiscipline;

@@ -6,93 +6,47 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Student {
-    private String id;
-    private String name;
-    private String surname;
-    private int age;
-    private String group;
-    private List<Subject> subject;
-    private List<Mark> marks;
+    private static final int m1 = 0;
+    private static final int m2 = 5;
+    private static final String english = "English";
+    private final long id;
+    private final String name;
+    private final String lastname;
+    private final List<Subject> subject;
+    private final List<Mark> marks;
+    static long statId = 0;
 
-    public Student(final String id, final String name, final String surname, final int age, final String group, final List<Subject> subject) {
-        this.id = id;
+    public Student(final String name, final String lastname, final List<Subject> subject) {
+        this.id = Student.statId++;
         this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.group = group;
+        this.lastname = lastname;
         this.subject = subject;
         this.marks = setMarkSubject();
     }
 
+    public long getId() { return id; }
+
     public List<Mark> getMarks() {
         return marks;
-    }
-
-    public void setMarks(final List<Mark> marks) {
-        this.marks = marks;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(final String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(final String surname) {
-        this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(final int age) {
-        this.age = age;
-    }
-
-    public String getGroup() {
-        return group;
-    }
-
-    public void setGroup(final String group) {
-        this.group = group;
     }
 
     public List<Subject> getSubject() {
         return subject;
     }
 
-    public void setSubject(final List<Subject> subject) {
-        this.subject = subject;
+    public String getName() {
+        return name;
     }
 
-    public List<Mark> getMark() {
-        return marks;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setMark(final List<Mark> mark) {
-        this.marks = mark;
-    }
-
-    public void addMark(final int value, final String nameSub) {
+    public void addMark(final int value, final String nameSubject) {
         for (int i = 0; i < subject.size(); i++) {
-            if (Objects.equals(subject.get(i).getName(), nameSub)) {
-                if (value < 0 || value > 5)
-                    marks.get(i).getMark().add(5);
+            if (Objects.equals(subject.get(i).getSubjectName(), nameSubject)) {
+                if (value < m1 || value > m2)
+                    marks.get(i).getMark().add(m2);
                 else
                     marks.get(i).getMark().add(value);
             }
@@ -101,6 +55,7 @@ public class Student {
 
     private List<Mark> setMarkSubject() {
         final List<Mark> marks = new ArrayList<>();
+
         for (int i = 0; i < subject.size(); i++) {
             final Mark mark = new Mark();
             marks.add(mark);
@@ -117,14 +72,14 @@ public class Student {
             count += mark.getMark().stream().mapToInt(value -> value).count();
         }
         if (count != 0)
-            return tmp / count;
+            return tmp/count;
         else
             return 0;
     }
 
     public List<Integer> showEnglish() {
         for (int i = 0; i < subject.size(); i++) {
-            if (subject.get(i).getName().equals("English")) {
+            if (subject.get(i).getSubjectName().equals(english)) {
                 return marks.get(i).getMark().stream().distinct().collect(Collectors.toList());
             }
         }
@@ -133,14 +88,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student: " +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", group='" + group + '\'' +
-                ", subject=" + subject +
-                ", marks=" + marks +
-                '}';
+        return "Id: " + this.getId() + "," +
+                " Name: " + this.getName() + "," +
+                " Lastname: " + this.getLastname();
     }
 }

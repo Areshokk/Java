@@ -15,7 +15,7 @@ public class ValidateUser {
     }
 
     public static void houseValidate (final String house) throws InvalidUserInput {
-        if ((house.length()<=0) || house.matches("(.*)\\W(.*)"))    /*       "\\W"   –   любий символ крім буквенного або цифрового символа або знак підкреслення   */
+        if ((house.length()<=0) || house.matches("(.*)\\W(.*)"))
             throw new InvalidUserInput("House should be without any special symbols", HttpCodeEnum.ERROR4);
     }
 
@@ -30,7 +30,7 @@ public class ValidateUser {
     }
 
     public static void nameValidate(final String name, final String typeOfObject) throws InvalidUserInput {
-        if ((name.length()<=2) || name.matches("(.*)\\W(.*)") || name.matches("(.*)\\d(.*)")) /*        "\\d" - цифровий символ   */
+        if ((name.length()<=2) || name.matches("(.*)\\W(.*)") || name.matches("(.*)\\d(.*)"))
             throw new InvalidUserInput(typeOfObject + " should have only letters and with at least 3 characters", HttpCodeEnum.ERROR4);
     }
 }
