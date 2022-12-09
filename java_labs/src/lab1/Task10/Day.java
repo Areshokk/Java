@@ -1,6 +1,10 @@
-package Lab1.Task10;
+package lab1.Task10;
 
 public class Day {
+
+    private lab1.Task10.Weather weather = new lab1.Task10.Weather();
+    private final NameOfDay nameOfDay;
+
     public Day(final NameOfDay nameOfDay, final TypeOfWeather typeOfWeather, final double temperature, final Integer atmosphericPressure, final Integer humidity) {
         this.nameOfDay = nameOfDay;
         this.weather.setTypeOfWeather (typeOfWeather);
@@ -10,19 +14,13 @@ public class Day {
 
     }
 
-    public Lab1.Task10.Weather getWeather() {
+    public lab1.Task10.Weather getWeather() {
         return weather;
     }
-
-    public void setWeather(final Lab1.Task10.Weather weather) {
-        this.weather = weather;}
 
     public NameOfDay getNameOfDay() {
         return nameOfDay;
     }
-
-    private Lab1.Task10.Weather weather = new Lab1.Task10.Weather();
-    private final NameOfDay nameOfDay;
 
     @Override
     public int hashCode() {

@@ -1,4 +1,4 @@
-package Lab1.Task11;
+package lab1.Task11;
 
 public class Order {
     final private double costkm = 2;

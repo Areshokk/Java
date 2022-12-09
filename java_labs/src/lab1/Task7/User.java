@@ -1,4 +1,4 @@
-package Lab1.Task7;
+package lab1.Task7;
 
 public class User {
 

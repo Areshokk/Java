@@ -12,7 +12,9 @@ public class Course {
 
     public Student bestStudent() {
         return students.stream()
-                .reduce((a, b) -> a.averageMark() > b.averageMark() ? a : b)
+                .reduce((a, b) -> a.averageMark() > b.averageMark() ? a : b) /* скорочений варіант if-else,
+                якщо а більше б повертаєм а        якщо б більше а повертаєм б
+                */
                 .get();
     }
 
@@ -31,6 +33,7 @@ public class Course {
                     else return s1.getLastname().compareTo(s2.getLastname());
                 }).collect(Collectors.toList());
     }
+    /*     порівнюємо два імені якщо два імені рівні ми порівнюємо два прізвища     якщо два імені рівні ми повертаємо 1(перший обєкт більший за другий) або 0 (рівні)або -1 (другий більший)  */
 
     public List<Student> sortBySurname() {
         return students.stream()

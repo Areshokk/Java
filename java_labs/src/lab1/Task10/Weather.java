@@ -1,4 +1,4 @@
-package Lab1.Task10;
+package lab1.Task10;
 
 public class Weather {
     private TypeOfWeather typeOfWeather;   //тип погоди
@@ -65,10 +65,10 @@ public class Weather {
 
     @Override
     public int hashCode() {
-        return (int) (40 * this.getTemperature() +
-                        40 * this.getTypeOfWeather().hashCode() +
-                        40* this.getAtmosphericPressure ()+
-                        40 * this.getHumidity());
+        return (int) (31 * this.getTemperature() +
+                        31 * this.getTypeOfWeather().hashCode() +
+                        31* this.getAtmosphericPressure ()+
+                        31 * this.getHumidity());
     }
 
 }

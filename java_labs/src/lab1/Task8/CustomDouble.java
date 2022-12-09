@@ -1,4 +1,4 @@
-package Lab1.Task8;
+package lab1.Task8;
 
 public class CustomDouble {
 
@@ -76,4 +76,6 @@ public class CustomDouble {
     public double toDouble() {
         return (double) this.first + this.second;
     }
+
+
 }

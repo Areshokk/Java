@@ -1,4 +1,4 @@
-package Lab1.Task8;
+package lab1.Task8;
 
 public class Main {
     public static void main(final String[] args) throws Exception {

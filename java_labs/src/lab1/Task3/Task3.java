@@ -1,4 +1,4 @@
-package Lab1.Task3;
+package lab1.Task3;
 
 public class Task3 {
     public static void main(final String[] args) {

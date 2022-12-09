@@ -1,16 +1,16 @@
 package lab2.task4;
 
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import static java.util.Collections.addAll;
 
 public class List {
     private final java.util.List<Student> studentList;
     private final java.util.List<String> subjectList;
-    private final Map <String, Map<String, Integer>> map;
+    private final Map<String, Map<String, Integer>> map;
 
     public List(final String[] subjectList) {
         this.subjectList = new ArrayList<>();
@@ -32,8 +32,8 @@ public class List {
     }
 
     public void infoAboutStudents() {
-        for(final lab2.task4.Student student: studentList) {
-            System.out.print("id " + student.getId() + " Name - "+ student.getName()+"  Course - " +student.getCourse()+ ", isMale - " +student.isMale()+ ", Age - " +student.getAge() + "  ");
+        for (final lab2.task4.Student student : studentList) {
+            System.out.print("id " + student.getId() + " Name - " + student.getName() + "  Course - " + student.getCourse() + ", isMale - " + student.isMale() + ", Age - " + student.getAge() + "  ");
 
             subjectList.stream().map((subject) -> (subject) + " - " + getMark(subject, student.getId()) + "  ").forEach(System.out::print);
             System.out.println();
@@ -65,7 +65,7 @@ public class List {
 
     public String getBestStudentId() {
         Student bestStudent = null;
-        int max=0;
+        int max = 0;
         int sum;
         for (final Student student : studentList) {
             sum = getMarksSum(student.getId());

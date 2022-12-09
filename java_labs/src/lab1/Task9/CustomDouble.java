@@ -1,4 +1,4 @@
-package Lab1.Task9;
+package lab1.Task9;
 
 public class CustomDouble {
 

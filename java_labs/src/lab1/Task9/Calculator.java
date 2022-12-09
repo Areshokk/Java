@@ -1,4 +1,4 @@
-package Lab1.Task9;
+package lab1.Task9;
 
 public class Calculator {
     private static double add(final double number1, final double number2){

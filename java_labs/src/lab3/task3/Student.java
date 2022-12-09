@@ -68,9 +68,12 @@ public class Student {
         int count = 0;
 
         for (final Mark mark : marks) {
-            tmp += mark.getMark().stream().mapToInt(value -> value).sum();
-            count += mark.getMark().stream().mapToInt(value -> value).count();
-        }
+
+
+
+            tmp += mark.getMark().stream().mapToInt(value -> value).sum();/*Метод sum() класу IntStream використовується в Java для повернення суми елементів в цьому потоці.*/
+            count += mark.getMark().stream().mapToInt(value -> value).count();/*Метод count() повертає кількість елементів у потоці даних*/
+        }/*GEt averange*/
         if (count != 0)
             return tmp/count;
         else

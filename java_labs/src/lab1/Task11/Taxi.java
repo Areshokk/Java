@@ -1,4 +1,4 @@
-package Lab1.Task11;
+package lab1.Task11;
 
 import java.util.Objects;
 

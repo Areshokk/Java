@@ -1,8 +1,7 @@
-package Lab2.task2;
+package lab2.task2;
 
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
+
 
 public class Stack implements Iterable<Integer> {
 

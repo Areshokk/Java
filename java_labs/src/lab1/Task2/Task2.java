@@ -1,4 +1,4 @@
-package Lab1.Task2;
+package lab1.Task2;
 
 import java.util.Arrays;
 
